@@ -1,0 +1,57 @@
+@font-face {
+   font-family: "Roboto";
+   src: url("https://www.dafont.com/es/roboto.font");
+ }
+
+#tabla1{
+margin:0 0 40px;
+overflow:hidden;
+padding:20px;
+background-color:#FFFFFF;
+border:2px solid #1976d2;
+-webkit-border-radius: 5px;
+border-radius: 15px;
+font-family: "Roboto";
+ }
+ #cabtab1{   
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #000000;
+    padding: 4 4 4 4px;
+    font-family: "Roboto";
+ }
+ #cuerpotab1{
+    margin:0 0 25px;
+    overflow:hidden;
+    padding:20px;
+    background-color:#FFFFFF;
+    border:1px solid #1976d2;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-family: "Roboto";
+ }
+ #formlabel1{
+    float: left;
+    width: 200px;
+    padding-right: 24px;
+    font-family: "Roboto";
+ }
+
+ #button{
+   background-color: #1976d2;
+   color: #ffffff;
+   padding:15px;
+   border-radius: 15px;
+   font-family:"Roboto";
+
+   
+ }
+h1{
+font-size: 150%;
+font-family:"Roboto";
+color: #1976d2 ;
+}
+h2{
+font-size: 100%;  
+font-family:"Roboto"; 
+}
