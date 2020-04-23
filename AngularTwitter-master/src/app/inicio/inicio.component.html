@@ -1,0 +1,10 @@
+<div class="py-4 px-5">
+  <h3>Todos los Tweets</h3>
+  <div class="row">
+    <app-tweet-card
+      class="col-12 col-md-6 mb-3"
+      [tweet]="xtweet"
+      *ngFor="let xtweet of allTweets$ | async"
+    ></app-tweet-card>
+  </div>
+</div>

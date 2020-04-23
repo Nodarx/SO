@@ -5,17 +5,17 @@ module.exports = (sequelize, Sequelize) => {
       idFollow: {
         type: Sequelize.INTEGER,
         primaryKey: true,
-        autoIncrement: true
+        autoIncrement: true,
       },
       idUserFollower: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       idUser: {
-        type: Sequelize.INTEGER
-      }
+        type: Sequelize.INTEGER,
+      },
     },
     {
-      tableName: "followers"
+      tableName: "followers",
     }
   );
   return Tweet;

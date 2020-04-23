@@ -12,11 +12,17 @@ import { HomeComponent } from './home/home.component';
 
 /* Modelos */
 import { User } from './Model/user';
+import { NewTweet } from './Model/tweet';
 
 /* Servicios */
 import { UserService } from './Services/user.service';
+import { TweetService } from './Services/tweet.service';
+
 import { NavPageService } from './Services/nav-page.service';
 import { TweetComponent } from './tweet/tweet.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { TweetCardComponent } from './tweet-card/tweet-card.component';
+import { MistweetsComponent } from './mistweets/mistweets.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +31,9 @@ import { TweetComponent } from './tweet/tweet.component';
     RegisterComponent,
     HomeComponent,
     TweetComponent,
+    InicioComponent,
+    TweetCardComponent,
+    MistweetsComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +42,7 @@ import { TweetComponent } from './tweet/tweet.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [User, NavPageService, UserService],
+  providers: [User, NewTweet, NavPageService, UserService, TweetService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

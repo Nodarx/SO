@@ -38,4 +38,8 @@ export class UserService {
   public getUserName() {
     return this.currentUser.username;
   }
+
+  public getUserId() {
+    return this.currentUser.idUser;
+  }
 }

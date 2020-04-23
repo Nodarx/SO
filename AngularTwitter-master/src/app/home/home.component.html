@@ -22,7 +22,7 @@
       <div class="text-center">
         <button
           class="uk-button px-4 py-3 btn-block btn-d-menu"
-          (click)="navigateComponent('RegistrarProfesor')"
+          (click)="navigateComponent('Inicio')"
         >
           <p class="text-center"><i class="far fa-newspaper fa-2x"></i></p>
           <p class="text-center mb-0 small">Inicio</p>
@@ -54,6 +54,7 @@
     <div class="col-12 px-0 offset-md-1 col-md-11">
       <div>
         <app-tweet *ngIf="showNuevoTweet"></app-tweet>
+        <app-inicio *ngIf="showInicio"></app-inicio>
       </div>
     </div>
   </div>

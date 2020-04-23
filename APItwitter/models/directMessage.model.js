@@ -3,17 +3,17 @@ module.exports = (sequelize, Sequelize) => {
     "directmessage",
     {
       idUserTransmitter: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       idUserReceiver: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       message: {
-        type: Sequelize.STRING
-      }
+        type: Sequelize.STRING,
+      },
     },
     {
-      tableName: "directmessage"
+      tableName: "directmessage",
     }
   );
   return directmessage;
