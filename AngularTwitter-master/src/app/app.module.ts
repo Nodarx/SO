@@ -16,6 +16,7 @@ import { User } from './Model/user';
 /* Servicios */
 import { UserService } from './Services/user.service';
 import { NavPageService } from './Services/nav-page.service';
+import { TweetComponent } from './tweet/tweet.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NavPageService } from './Services/nav-page.service';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    TweetComponent,
   ],
   imports: [
     BrowserModule,

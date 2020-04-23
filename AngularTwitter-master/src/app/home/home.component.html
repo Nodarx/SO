@@ -13,7 +13,7 @@
       <div class="text-center">
         <button
           class="uk-button px-4 py-3 btn-block btn-d-menu"
-          (click)="navigateComponent('CrearGrupo')"
+          (click)="navigateComponent('NuevoTweet')"
         >
           <p class="text-center"><i class="fab fa-twitter-square fa-2x"></i></p>
           <p class="text-center mb-0 small">Nuevo Tweet</p>
@@ -53,8 +53,7 @@
     </div>
     <div class="col-12 px-0 offset-md-1 col-md-11">
       <div>
-        <!-- <app-create-group *ngIf="showCreateGroup"></app-create-group>
-        <app-register *ngIf="showRegisterTeacher"></app-register> -->
+        <app-tweet *ngIf="showNuevoTweet"></app-tweet>
       </div>
     </div>
   </div>
