@@ -1,0 +1,13 @@
+.contentLogin,
+.contentRegister {
+ /* background-image: url("../../assets/Images/login.jpg");*/
+  background-size: cover;
+  width: 100%;
+  height: 100vh
+}
+
+.icon-banner {
+  height: 18px;
+  width: 80%;
+}
+

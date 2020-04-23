@@ -7,7 +7,7 @@ function createUser(req, res) {
   }
   const newUserObject = {
     username: req.body.username,
-    password: req.body.password
+    password: req.body.password,
   };
   dbManager.User.create(newUserObject)
     .then((data) => {
@@ -16,7 +16,7 @@ function createUser(req, res) {
     .catch((error) => {
       console.log(error);
       res.status(500).send({
-        menssage: "SOMENTHING HAPPENED, ERROR"
+        menssage: "SOMENTHING HAPPENED, ERROR",
       });
     });
 }
@@ -26,12 +26,12 @@ async function findAllUsers(req, res) {
     const allUsers = await dbManager.User.findAll();
 
     res.send({
-      usuarios: allUsers
+      usuarios: allUsers,
     });
   } catch (error) {
     console.log(error);
     res.status(500).send({
-      menssage: "ERROR, SORRY"
+      menssage: "ERROR, SORRY",
     });
   }
 }
@@ -41,13 +41,13 @@ async function findUserById(req, res) {
     const { idUser, idPost } = req.params;
     const user = await dbManager.User.findOne({
       where: {
-        idUser: idUser
-      }
+        idUser: idUser,
+      },
     });
     res.json(user);
   } catch (error) {
     res.status(500).send({
-      menssage: "ERROR, SORRY"
+      menssage: "ERROR, SORRY",
     });
   }
 }
@@ -57,13 +57,13 @@ async function deleteUserById(req, res) {
     const { idUser } = req.params;
     const user = await dbManager.User.destroy({
       where: {
-        idUser: idUser
-      }
+        idUser: idUser,
+      },
     });
     res.json("usuario eliminado correctamente");
   } catch (error) {
     res.status(500).send({
-      menssage: "ERROR, SORRY"
+      menssage: "ERROR, SORRY",
     });
   }
 }
@@ -76,18 +76,18 @@ async function authUser(req, res) {
       //insertar autenticación
       where: {
         username: username,
-        password: password
-      }
+        password: password,
+      },
     });
     //Send response
-    if (user) res.json("usuario logeado correctamente");
-    else res.json("usuario o contraseña incorrecta");
+    if (user) res.json(user);
+    else res.status(400).json("usuario y/o contraseña incorrecto");
   } catch (e) {
     // Print error on console
     console.log(e);
     // Send error message as a response
     res.status(500).send({
-      message: "Some error occurred"
+      message: "Some error occurred",
     });
   }
 }

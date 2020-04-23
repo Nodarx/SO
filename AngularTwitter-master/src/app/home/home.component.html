@@ -1,0 +1,61 @@
+<div>
+  <div class="d-flex">
+    <div
+      id="menu-v-lateral"
+      class="col-md-1 px-0 d-none d-md-block position-fixed h-100"
+      style="z-index: 9999;"
+    >
+      <div class="mb-3 pt-3 pb-2 px-1">
+        <div class="text-center">
+          <p class="text-center mb-0 small text-12 text-f5">{{ user }}</p>
+        </div>
+      </div>
+      <div class="text-center">
+        <button
+          class="uk-button px-4 py-3 btn-block btn-d-menu"
+          (click)="navigateComponent('CrearGrupo')"
+        >
+          <p class="text-center"><i class="fab fa-twitter-square fa-2x"></i></p>
+          <p class="text-center mb-0 small">Nuevo Tweet</p>
+        </button>
+      </div>
+      <div class="text-center">
+        <button
+          class="uk-button px-4 py-3 btn-block btn-d-menu"
+          (click)="navigateComponent('RegistrarProfesor')"
+        >
+          <p class="text-center"><i class="far fa-newspaper fa-2x"></i></p>
+          <p class="text-center mb-0 small">Inicio</p>
+        </button>
+      </div>
+      <div>
+        <div class="text-center position-relative">
+          <button
+            class="uk-button px-4 py-3 btn-block btn-d-menu"
+            type="button"
+          >
+            <p class="text-center"><i class="fas fa-bullhorn fa-2x"></i></p>
+            <p class="text-center mb-0 small">Mis Tweets</p>
+          </button>
+        </div>
+      </div>
+      <div>
+        <div class="text-center">
+          <button
+            class="uk-button px-4 py-3 btn-block btn-d-menu"
+            (click)="signOut()"
+          >
+            <p class="text-center"><i class="fas fa-power-off fa-2x"></i></p>
+            <p class="text-center mb-0 small">Cerrar sesión</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 px-0 offset-md-1 col-md-11">
+      <div>
+        <!-- <app-create-group *ngIf="showCreateGroup"></app-create-group>
+        <app-register *ngIf="showRegisterTeacher"></app-register> -->
+      </div>
+    </div>
+  </div>
+</div>
