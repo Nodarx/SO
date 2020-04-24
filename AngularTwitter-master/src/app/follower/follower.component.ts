@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { User } from 'src/app/Model/user';
 
 @Component({
   selector: 'app-follower',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./follower.component.css']
 })
 export class FollowerComponent implements OnInit {
-
+  @Input() user: User;
   constructor() { }
 
   ngOnInit(): void {

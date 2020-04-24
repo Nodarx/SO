@@ -1,52 +1,39 @@
 <div class="container">
     <div class="row justify-content-center">
-        <h1 class = "color ">Mi Perfil</h1>
+        <h1 class = "color ">{{username}}</h1>
     </div>
     <div class="row justify-content-center">
         <div class="cuadrado"></div>
     </div>
     <div class="row justify-content-center">
-        <h4>Nombre de la persona</h4>
+        <h4></h4>
     </div>
 
     <div class="row justify-content-center ">
-        <button 
-        
-        type="button" class="boton"> Mis tweets </button>
+        <button *ngIf="tweets"
+        type="button" class="boton"
+        (click)="changeComponent('followers')"> Seguidores </button>
     </div>
-
+    <div class="row justify-content-center ">
+        <button *ngIf="followers"
+        type="button" class="boton"
+        (click)="changeComponent('tweets')"> Tweets </button>
+    </div>
 </div>
 
-    <div class="row justify-content-center mt-5">
-        <h1 class = "color ">Seguidores</h1>
+<div class="py-4 px-5">
+    <div class="row" *ngIf="tweets">
+        <app-tweet-card 
+        class="col-12 col-md-6 mb-3"
+        [tweet]="xtweet"
+        *ngFor = 'let xtweet of tweets$ | async'>
+        </app-tweet-card>
     </div>
-        <div class="row justify-content-center mt-3">
-            <div class="row cuadrado1 justify-content-center">
-                <div class="row-3 justify-content-right">
-                   aqui va la imagen
-                </div>
-                
-                <div class="row-3  nombre">
-                    <h4>Nombre</h4> 
-                </div>
-                    
-                    
-            </div>
-        </div>
-        <div class="row justify-content-center mt-3">
-            <div class="row justify-content-center">
-                <div class="cuadrado1"></div> 
-            </div>
-        </div>
-        <div class="row justify-content-center mt-3">
-            <div class="row justify-content-center">
-                <div class="cuadrado1"></div> 
-            </div>
-        </div>
-        <div class="row justify-content-center mt-3">
-            <div class="row justify-content-center">
-                <div class="cuadrado1"></div> 
-            </div>
-        </div>
 
-  
+    <div class="row" *ngIf="followers">
+        <app-follower 
+        class="col-12 col-md-6 mb-3"
+        [user]="xfollower"
+        *ngFor = 'let xfollower if followers$ | async'></app-follower>
+    </div>
+</div>

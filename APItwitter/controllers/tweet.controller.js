@@ -35,6 +35,22 @@ async function findAllTweets(req, res) {
   }
 }
 
+async function findTweetsByUser(req, res) {
+  try {
+    const { idUser } = req.params;
+    const allTweets = await dbManager.Tweet.findAll({
+      where: { userIdUser: idUser },
+      include: [{ model: dbManager.User }],
+    });
+    res.json(allTweets);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      menssage: error,
+    });
+  }
+}
+
 function deleteTweet(req, res) {
   const { tweet } = req.params;
   dbManager.Tweet.destroy({ where: { tweet: tweet } }).catch((error) => {
@@ -46,3 +62,4 @@ function deleteTweet(req, res) {
 exports.createTweet = createTweet;
 exports.findAllTweets = findAllTweets;
 exports.deleteTweet = deleteTweet;
+exports.findTweetsByUser = findTweetsByUser;
