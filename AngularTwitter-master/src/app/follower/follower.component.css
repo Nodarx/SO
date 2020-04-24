@@ -1,0 +1,9 @@
+.cuadrado1{
+    width: 150px;
+    height: 200px;
+    text-size-adjust: unset;
+    background-color:white;
+    border: solid 3px gray;
+    color:gray;
+    border-radius: 15px;
+}

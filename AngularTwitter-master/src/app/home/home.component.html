@@ -19,6 +19,8 @@
           <p class="text-center mb-0 small">Nuevo Tweet</p>
         </button>
       </div>
+
+      
       <div class="text-center">
         <button
           class="uk-button px-4 py-3 btn-block btn-d-menu"
@@ -26,6 +28,16 @@
         >
           <p class="text-center"><i class="far fa-newspaper fa-2x"></i></p>
           <p class="text-center mb-0 small">Inicio</p>
+        </button>
+      </div>
+
+      <div class="text-center">
+        <button
+          class="uk-button px-8 py-3 btn-block btn-d-menu"
+          (click)="navigateComponent('Profile')"
+        >
+          <p class="text-center"><i class="fa fa-user-circle fa-2x"></i></p>
+          <p class="text-center mb-0 small">Perfil</p>
         </button>
       </div>
       <div>
@@ -55,6 +67,7 @@
       <div>
         <app-tweet *ngIf="showNuevoTweet"></app-tweet>
         <app-inicio *ngIf="showInicio"></app-inicio>
+        <app-profile *ngIf="showProfile"></app-profile>
       </div>
     </div>
   </div>
