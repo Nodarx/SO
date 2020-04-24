@@ -10,8 +10,9 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class HomeComponent implements OnInit {
   public showNuevoTweet = false;
-  public showInicio = false;
+  public showInicio = true;
   public showMisTweets = false;
+  public showProfile=false; 
 
   public user;
 
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit {
     this.showNuevoTweet = false;
     this.showInicio = false;
     this.showMisTweets = false;
+    this.showProfile=false;
 
     switch (componente) {
       case 'NuevoTweet': {
@@ -39,6 +41,11 @@ export class HomeComponent implements OnInit {
         this.showInicio = true;
         break;
       }
+      case 'Profile': {
+        this.showProfile = true;
+        break;
+      }
+      
     }
   }
   public signOut() {

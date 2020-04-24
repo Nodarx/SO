@@ -4,7 +4,7 @@
     <app-tweet-card
       class="col-12 col-md-6 mb-3"
       [tweet]="xtweet"
-      *ngFor="let xtweet of misTweets$ | async"
+      *ngFor="let xtweet of allTweets$ | async"
     ></app-tweet-card>
   </div>
 </div>
