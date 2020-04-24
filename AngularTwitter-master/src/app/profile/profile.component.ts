@@ -21,10 +21,10 @@ export class ProfileComponent implements OnInit {
   
   constructor(private tweetService: TweetService, 
     private followerService: FollowerService,public userService: UserService ) { 
-    this.getTweets();
-    this.getFollower();
     this.user = userService.getUserId();
     this.username = userService.getUserName();
+    this.getTweets();
+    this.getFollower();
   }
 
   ngOnInit(): void {
@@ -47,10 +47,10 @@ export class ProfileComponent implements OnInit {
   }
 
   async getTweets() {
-    this.tweets$ = this.tweetService.ObtenerTodosLosTweets();
+    this.tweets$ = this.tweetService.ObtenerTweetsPorUsuario(this.user);
   }
 
-  async  getFollower(){
+  async getFollower(){
     this.followers$ = this.followerService.getFollowers(this.user);
   }
 

@@ -29,8 +29,9 @@ export class TweetService {
     });
   }
 
-  public ObtenerTweetsPorUsuario(): Observable<Tweets> {
-    return this.http.get<Tweets>(this.accessPointUrl + '/alltweets', {
+  public ObtenerTweetsPorUsuario(userId): Observable<Tweets> {
+    console.log(userId);
+    return this.http.get<Tweets>(this.accessPointUrl + '/findTweetsByUser/' + userId,{
       headers: this.headers,
     });
   }
