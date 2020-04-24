@@ -11,8 +11,8 @@ import { ThrowStmt } from '@angular/compiler';
 export class HomeComponent implements OnInit {
   public showNuevoTweet = false;
   public showInicio = true;
-  public showMisTweets = false;
-  public showProfile=false; 
+  public showPersonas = false;
+  public showProfile = false; 
 
   public user;
 
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   public navigateComponent(componente) {
     this.showNuevoTweet = false;
     this.showInicio = false;
-    this.showMisTweets = false;
+    this.showPersonas = false;
     this.showProfile=false;
 
     switch (componente) {
@@ -37,8 +37,8 @@ export class HomeComponent implements OnInit {
         this.showInicio = true;
         break;
       }
-      case 'MisTweets': {
-        this.showInicio = true;
+      case 'Personas': {
+        this.showPersonas = true;
         break;
       }
       case 'Profile': {

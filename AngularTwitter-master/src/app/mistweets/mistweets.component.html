@@ -1,10 +1,10 @@
 <div class="py-4 px-5">
-  <h3>Mis Tweets</h3>
+  <h3>Personas</h3>
   <div class="row">
-    <app-tweet-card
+    <app-follower
       class="col-12 col-md-6 mb-3"
-      [tweet]="xtweet"
-      *ngFor="let xtweet of allTweets$ | async"
-    ></app-tweet-card>
+      [user]="xuser"
+      *ngFor="let xuser of allUser$ | async"
+    ></app-follower>
   </div>
 </div>

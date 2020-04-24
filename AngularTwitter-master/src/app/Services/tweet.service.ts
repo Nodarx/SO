@@ -30,7 +30,6 @@ export class TweetService {
   }
 
   public ObtenerTweetsPorUsuario(userId): Observable<Tweets> {
-    console.log(userId);
     return this.http.get<Tweets>(this.accessPointUrl + '/findTweetsByUser/' + userId,{
       headers: this.headers,
     });

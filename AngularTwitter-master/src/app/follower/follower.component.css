@@ -7,3 +7,21 @@
     color:gray;
     border-radius: 15px;
 }
+
+.boton{
+    
+    padding-bottom: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 7px;
+    background-color: rgb(6, 2, 44);
+    text-decoration-color: rgb(6, 2, 44);
+    border-style: solid;
+    border-color: #666666;
+    color: #ffffff;
+    border-radius: 40px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius:20px ;
+}

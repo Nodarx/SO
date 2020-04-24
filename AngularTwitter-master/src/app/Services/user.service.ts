@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from '../Model/user';
+import { Observable } from 'rxjs';
+import { User,Users } from '../Model/user';
 
 @Injectable({
   providedIn: 'root',
@@ -26,6 +27,12 @@ export class UserService {
 
   public login(usuario) {
     return this.http.post(this.accessPointUrl + '/login', usuario, {
+      headers: this.headers,
+    });
+  }
+
+  public getUsers(): Observable<Users>{
+    return this.http.get<Users>(this.accessPointUrl + '/', {
       headers: this.headers,
     });
   }

@@ -25,9 +25,9 @@ async function findAllUsers(req, res) {
   try {
     const allUsers = await dbManager.User.findAll();
 
-    res.send({
-      usuarios: allUsers,
-    });
+    res.send(
+       allUsers
+    );
   } catch (error) {
     console.log(error);
     res.status(500).send({

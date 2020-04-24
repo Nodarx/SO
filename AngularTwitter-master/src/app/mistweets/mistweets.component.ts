@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Tweets } from '../Model/tweet';
-import { TweetService } from '../Services/tweet.service';
+import { User, Users } from '../Model/user';
+import { UserService } from '../Services/user.service';
 
 @Component({
   selector: 'app-mistweets',
@@ -9,15 +9,15 @@ import { TweetService } from '../Services/tweet.service';
   styleUrls: ['./mistweets.component.css'],
 })
 export class MistweetsComponent implements OnInit {
-  public allTweets$: Observable<Tweets>;
+  public allUser$: Observable<Users>;
 
-  constructor(private tweetService: TweetService) {
-    this.getAllTweets();
+  constructor(private userService: UserService) {
+    this.getAllUser();
   }
 
   ngOnInit(): void {}
 
-  async getAllTweets() {
-    this.allTweets$ = this.tweetService.ObtenerTodosLosTweets();
+  async getAllUser() {
+    this.allUser$ = this.userService.getUsers();
   }
 }
