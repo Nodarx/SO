@@ -10,7 +10,7 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class HomeComponent implements OnInit {
   public showNuevoTweet = false;
-  public showInicio = false;
+  public showInicio = true;
   public showMisTweets = false;
 
   public user;
