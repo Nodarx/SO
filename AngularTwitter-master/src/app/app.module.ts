@@ -23,6 +23,8 @@ import { TweetComponent } from './tweet/tweet.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { TweetCardComponent } from './tweet-card/tweet-card.component';
 import { MistweetsComponent } from './mistweets/mistweets.component';
+import { ProfileComponent } from './profile/profile.component';
+import { FollowerComponent } from './follower/follower.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { MistweetsComponent } from './mistweets/mistweets.component';
     InicioComponent,
     TweetCardComponent,
     MistweetsComponent,
+    ProfileComponent,
+    FollowerComponent,
   ],
   imports: [
     BrowserModule,
