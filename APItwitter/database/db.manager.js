@@ -15,15 +15,6 @@ const Tweet = TweetModel(sequelizeConnection, Sequelize);
 const Followers = FollowersModel(sequelizeConnection, Sequelize);
 const DirectMessage = DirectMessageModel(sequelizeConnection, Sequelize);
 
-/* User.hasMany(Post);
-User.hasMany(Tweet);
- */
-/* User.hasMany(Tweet, { foreinKey: "idUser", sourceKey: "idUser" });*/
-/* User.hasMany(Tweet, { as: "usuarios" }); */
-/* User.hasMany(DirectMessage, { foreinKey: "idUser", sourceKey: "idUser" });
-
-Post.belongsTo(User, { foreinKey: "idUser", sourceKey: "idUser" });
-Tweet.belongsTo(User, { as: "usuarios" }); */
 User.hasMany(Tweet);
 Tweet.belongsTo(User);
 const models = {

@@ -97,15 +97,15 @@ async function updateUser(req,res){
     res.status(400).send({ menssage: "REQUEST IS EMPTY" });
     return;
   }
-  const newUserObject = {
+  const newUser = {
     idUser:req.body.idUser,
     username: req.body.username,
     password: req.body.password,
   };
   dbManager.User.update(
-    {username:req.body.username},
-    {password: req.body.password},
-    {where:{idUser:req.body.idUser,},}
+    {username:newUser.username,
+      password: newUser.password},
+    {where: {idUser:newUser.idUser,},}
     )
     .then((data) => {
       res.send(data);
