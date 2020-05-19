@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
   public followers$: Observable<User>;
   public username;
   private user;
+  public changeInfo=false; 
   
   constructor(private tweetService: TweetService, 
     private followerService: FollowerService,public userService: UserService ) { 
@@ -33,6 +34,7 @@ export class ProfileComponent implements OnInit {
   public changeComponent(componente){
     this.tweets = false;
     this.followers = false;
+    this.changeInfo=false;
 
     switch (componente) {
       case 'tweets': {
@@ -43,7 +45,11 @@ export class ProfileComponent implements OnInit {
         this.followers = true;
         break;
       }
-    }
+      case'change-info':{
+        this.changeInfo=true;
+        break;
+      }
+    } 
   }
 
   async getTweets() {

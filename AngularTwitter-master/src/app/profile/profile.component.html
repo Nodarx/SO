@@ -1,21 +1,36 @@
 <div class="container">
     <div class="row justify-content-center">
         <h1 class = "color ">{{username}}</h1>
+        
+
     </div>
     <div class="row justify-content-center">
-        <div class="cuadrado"></div>
+        <div class="cuadrado">
+           
+        </div>
     </div>
     <div class="row justify-content-center">
         <h4></h4>
     </div>
 
     <div class="row justify-content-center ">
-        <button *ngIf="tweets"
+        <button *ngIf="tweets || changeInfo"
         type="button" class="boton"
         (click)="changeComponent('followers')"> Seguidores </button>
+
     </div>
+    <div class="row justify-content-center mt-3 mb-3 ">
+       
+        <button class = "boton"
+        *ngIf="tweets || followers" 
+         (click)="changeComponent('change-info')"> 
+         editar información 
+        </button>
+    </div>
+
+
     <div class="row justify-content-center ">
-        <button *ngIf="followers"
+        <button *ngIf="followers || changeInfo"
         type="button" class="boton"
         (click)="changeComponent('tweets')"> Tweets </button>
     </div>
@@ -35,5 +50,9 @@
         class="col-12 col-md-6 mb-3"
         [user]="xfollower"
         *ngFor = 'let xfollower if followers$ | async'></app-follower>
+    </div>
+
+    <div  *ngIf="changeInfo">
+        <app-change-info></app-change-info>
     </div>
 </div>

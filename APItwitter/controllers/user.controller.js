@@ -92,8 +92,36 @@ async function authUser(req, res) {
   }
 }
 
+async function updateUser(req,res){
+  if (!req.body) {
+    res.status(400).send({ menssage: "REQUEST IS EMPTY" });
+    return;
+  }
+  const newUserObject = {
+    idUser:req.body.idUser,
+    username: req.body.username,
+    password: req.body.password,
+  };
+  dbManager.User.update(
+    {username:req.body.username},
+    {password: req.body.password},
+    {where:{idUser:req.body.idUser,},}
+    )
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).send({
+        menssage: "SOMENTHING HAPPENED, ERROR",
+      });
+    });
+}
+
+
 exports.createUser = createUser;
 exports.findAllUsers = findAllUsers;
 exports.findUserById = findUserById;
 exports.authUser = authUser;
 exports.deleteUserById = deleteUserById;
+exports.updateUser= updateUser;

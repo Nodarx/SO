@@ -3,6 +3,7 @@ import { UserService } from '../Services/user.service';
 import { Router } from '@angular/router';
 import { ThrowStmt } from '@angular/compiler';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -13,6 +14,7 @@ export class HomeComponent implements OnInit {
   public showInicio = true;
   public showPersonas = false;
   public showProfile = false; 
+  public showChageInfo = false;
 
   public user;
 
@@ -27,6 +29,7 @@ export class HomeComponent implements OnInit {
     this.showInicio = false;
     this.showPersonas = false;
     this.showProfile=false;
+    this.showChageInfo = false;
 
     switch (componente) {
       case 'NuevoTweet': {
@@ -43,6 +46,10 @@ export class HomeComponent implements OnInit {
       }
       case 'Profile': {
         this.showProfile = true;
+        break;
+      }
+      case 'ChageInfo': {
+        this.showChageInfo = true;
         break;
       }
       

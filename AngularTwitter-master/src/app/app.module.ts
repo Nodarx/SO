@@ -25,6 +25,7 @@ import { TweetCardComponent } from './tweet-card/tweet-card.component';
 import { MistweetsComponent } from './mistweets/mistweets.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FollowerComponent } from './follower/follower.component';
+import { ChangeInfoComponent } from './change-info/change-info.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { FollowerComponent } from './follower/follower.component';
     MistweetsComponent,
     ProfileComponent,
     FollowerComponent,
+    ChangeInfoComponent,
   ],
   imports: [
     BrowserModule,

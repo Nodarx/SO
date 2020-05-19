@@ -49,4 +49,10 @@ export class UserService {
   public getUserId() {
     return this.currentUser.idUser;
   }
+  public updateUser(user){
+    this.currentUser=user;
+    return this.http.post(this.accessPointUrl + '/updateUser', user, {
+      headers: this.headers,
+    });
+  }
 }
